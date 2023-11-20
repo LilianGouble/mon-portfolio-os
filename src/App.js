@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import TaskBar from './components/TaskBar/TaskBar';
+import MenuBar from './components/MenuBar/MenuBar';
+import Background from './components/Background/Background';
+import ContactApp from './components/ContactApp/ContactApp';
 import './App.css';
 
 function App() {
+  const [isContactOpen, setContactOpen] = useState(false);
+
+  const toggleContactApp = () => {
+    console.log('toggleContactApp called'); // Ceci devrait s'afficher dans la console lorsque vous cliquez sur Contact
+    setContactOpen(!isContactOpen);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Background>
+      <MenuBar />
+      <TaskBar onContactClick={toggleContactApp} />
+      {isContactOpen && <ContactApp onClose={toggleContactApp} />}
+    </Background>
   );
 }
 

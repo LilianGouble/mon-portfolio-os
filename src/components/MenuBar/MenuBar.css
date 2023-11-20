@@ -1,0 +1,19 @@
+.menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menubar-item {
+    margin-left: 20px;
+    color: white;
+    cursor: default;
+}
+  

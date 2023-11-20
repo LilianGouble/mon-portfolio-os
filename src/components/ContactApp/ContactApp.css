@@ -1,0 +1,47 @@
+.contact-app {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+  
+.contact-app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+  
+.contact-app-header button {
+    border: none;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.centered-element {
+  position: absolute; /* or fixed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    cursor: nwse-resize; /* curseur en forme de flèche diagonale */
+  }
