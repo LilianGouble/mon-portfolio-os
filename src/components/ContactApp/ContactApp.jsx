@@ -58,13 +58,13 @@ const ContactApp = ({ onClose }) => {
 
   const handleResizeMouseMove = useCallback((e) => {
     if (!isResizing) return;
-    let newWidth = startSize.width + (e.clientX - startPos.x);
-    let newHeight = startSize.height + (e.clientY - startPos.y);
-
-    setSize({
-      width: Math.max(newWidth, minWidth),
-      height: Math.max(newHeight, minHeight),
-    });
+  
+    // Calculez la nouvelle largeur et hauteur
+    const newWidth = Math.max(startSize.width + (e.clientX - startPos.x), minWidth);
+    const newHeight = Math.max(startSize.height + (e.clientY - startPos.y), minHeight);
+  
+    // Mettez à jour uniquement la largeur et la hauteur
+    setSize({ width: newWidth, height: newHeight });
   }, [isResizing, startPos, startSize, minWidth, minHeight]);
 
   const handleResizeMouseUp = useCallback(() => {
